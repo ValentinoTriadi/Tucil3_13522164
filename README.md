@@ -94,13 +94,18 @@ Word Ladder only allow the route solution to contains word that have only 1 char
 <!-- Requirement Dependencies -->
 ## Requirements
 
-1. <a href="java.com">Java JDK 17 or latest</a>
-    Installation in Linux
+1. <a href="java.com">Java JDK 17 or latest</a>  
+    Installation in WSL
     ```bash
       sudo apt update
       sudo apt install openjdk-17-jdk openjdk-17-jre
     ```
 2. <a href="https://www.baeldung.com/install-maven-on-windows-linux-mac">Maven</a>  
+    Installation in WSL
+    ```bash
+      sudo apt update
+      sudo apt install maven
+    ```
     
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -117,8 +122,8 @@ Word Ladder only allow the route solution to contains word that have only 1 char
 2. ```sh
    cd src/Tucil3_13522164
    ```
-3. Run `setup.bat` (first time only)
-  ON WINDOWS:
+3. Run `setup.bat` (first time only)  
+  ON WINDOWS:  
    ```sh
    ./setup
    ```
@@ -127,7 +132,7 @@ Word Ladder only allow the route solution to contains word that have only 1 char
    chmod +x setup.bat
    sudo ./setup.bat
    ```
-4. Run `run.bat`
+4. Run `run.bat`  
   ON WINDOWS:
    ```sh
    ./run
