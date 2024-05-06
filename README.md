@@ -95,6 +95,11 @@ Word Ladder only allow the route solution to contains word that have only 1 char
 ## Requirements
 
 1. <a href="java.com">Java JDK 17 or latest</a>
+    Installation in Linux
+    ```bash
+      sudo apt update
+      sudo apt install openjdk-17-jdk openjdk-17-jre
+    ```
 2. <a href="https://www.baeldung.com/install-maven-on-windows-linux-mac">Maven</a>  
     
 
@@ -113,12 +118,24 @@ Word Ladder only allow the route solution to contains word that have only 1 char
    cd src/Tucil3_13522164
    ```
 3. Run `setup.bat` (first time only)
-    ```sh
+  ON WINDOWS:
+   ```sh
    ./setup
    ```
+   ON LINUX:
+   ```sh
+   chmod +x setup.bat
+   sudo ./setup.bat
+   ```
 4. Run `run.bat`
+  ON WINDOWS:
    ```sh
    ./run
+   ```
+   ON LINUX:
+   ```sh
+   chmod +x run.bat
+   sudo ./run.bat
    ```
 5. Enjoy! (fill the word first before click algorithm button) 
 
