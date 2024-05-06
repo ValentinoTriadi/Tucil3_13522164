@@ -25,6 +25,28 @@ public class AStar implements Algorithm {
         this.checkedWord = new HashSet<String>();
     }
 
+    public void printResult() {
+        if (result == null) {
+            System.out.println("No Solution");
+            return;
+        }
+        for (String temp : result.getPath()) {
+            System.out.println(temp);
+        }
+    }
+
+    public String[][] getResult() {
+        if (result == null) {
+            return new String[0][0];
+        }
+        List<String> resultPath = result.getPath();
+        String[][] resultArray = new String[resultPath.size()][startWord.length()];
+        for (int i = 0; i < resultPath.size(); i++) {
+            resultArray[i] = resultPath.get(i).split("");
+        }
+        return resultArray;
+    }
+
     public Result solve() {
         // Activate Garbage Collector and Get Current Memory Usage
         System.gc();
@@ -88,27 +110,5 @@ public class AStar implements Algorithm {
     private int getCost(List<String> path) {
         int cost = path.size() - 1;
         return cost + Utils.getDifferentCharacter(path.get(cost), endWord);
-    }
-
-    public void printResult() {
-        if (result == null) {
-            System.out.println("No Solution");
-            return;
-        }
-        for (String temp : result.getPath()) {
-            System.out.println(temp);
-        }
-    }
-
-    public String[][] getResult() {
-        if (result == null) {
-            return new String[0][0];
-        }
-        List<String> resultPath = result.getPath();
-        String[][] resultArray = new String[resultPath.size()][startWord.length()];
-        for (int i = 0; i < resultPath.size(); i++) {
-            resultArray[i] = resultPath.get(i).split("");
-        }
-        return resultArray;
     }
 }

@@ -26,6 +26,23 @@ public class UCS implements Algorithm {
         this.nodeChecked = 0;
     }
 
+    public void printResult() {
+        for (String temp : this.result) {
+            System.out.println(temp);
+        }
+    }
+
+    public String[][] getResult() {
+        if (this.result.isEmpty()) {
+            return new String[0][0];
+        }
+        String[][] resultArray = new String[this.result.size()][this.result.get(0).length()];
+        for (int i = 0; i < this.result.size(); i++) {
+            resultArray[i] = this.result.get(i).split("");
+        }
+        return resultArray;
+    }
+
     public Result solve() {
         // Activate Garbage Collector and Get Current Memory Usage
         System.gc();
@@ -79,22 +96,5 @@ public class UCS implements Algorithm {
         this.result.clear();
         this.Time = System.currentTimeMillis() - startTimeLong;
         return new Result(getResult(), nodeChecked, this.Time, 0);
-    }
-
-    public void printResult() {
-        for (String temp : this.result) {
-            System.out.println(temp);
-        }
-    }
-
-    public String[][] getResult() {
-        if (this.result.isEmpty()) {
-            return new String[0][0];
-        }
-        String[][] resultArray = new String[this.result.size()][this.result.get(0).length()];
-        for (int i = 0; i < this.result.size(); i++) {
-            resultArray[i] = this.result.get(i).split("");
-        }
-        return resultArray;
     }
 }

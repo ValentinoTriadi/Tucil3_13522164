@@ -18,6 +18,26 @@ public class Greedy implements Algorithm {
         this.Time = 0L;
     }
 
+    public void printResult() {
+        for (String temp : this.result) {
+            System.out.println(temp);
+        }
+    }
+
+    public String[][] getResult() {
+        if (this.result.isEmpty()) {
+            return new String[0][0];
+        }
+        int wordLength = this.result.get(0).length();
+        String[][] result = new String[this.result.size()][wordLength];
+        for (String temp : this.result) {
+            for (int i = 0; i < wordLength; i++) {
+                result[this.result.indexOf(temp)][i] = String.valueOf(temp.charAt(i));
+            }
+        }
+        return result;
+    }
+
     public Result solve() {
         // Activate Garbage Collector and Get Current Memory Usage
         System.gc();
@@ -62,25 +82,5 @@ public class Greedy implements Algorithm {
         int memory = (int) (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
         System.gc();
         return new Result(getResult(), this.nodeChecked, this.Time, memory - memoryNow);
-    }
-
-    public void printResult() {
-        for (String temp : this.result) {
-            System.out.println(temp);
-        }
-    }
-
-    public String[][] getResult() {
-        if (this.result.isEmpty()) {
-            return new String[0][0];
-        }
-        int wordLength = this.result.get(0).length();
-        String[][] result = new String[this.result.size()][wordLength];
-        for (String temp : this.result) {
-            for (int i = 0; i < wordLength; i++) {
-                result[this.result.indexOf(temp)][i] = String.valueOf(temp.charAt(i));
-            }
-        }
-        return result;
     }
 }
