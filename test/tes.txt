@@ -1,0 +1,24 @@
+// FORMAT:
+// Start Word
+// End Word
+
+KNACK
+SKILL
+
+GOOD
+IDEA
+
+MILD
+CALM
+
+NOTE
+BOOK
+
+ACE
+BYE
+
+TOILET
+KILLER
+
+ACHING
+KILLER
